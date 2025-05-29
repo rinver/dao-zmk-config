@@ -14,11 +14,7 @@
 #define ADJ 3
 
 &lt { quick_tap_ms = <200>; };
-&mt 
-{ 
-    quick_tap_ms = <150>;
-    tapping-term-ms = <140>;
-};
+&mt { quick_tap_ms = <150>; };
 
 / {
     chosen {
