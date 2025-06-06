@@ -8,6 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#include "../zmk-nodefree-config/helper.h"
+
 #define DEF 0
 #define LWR 1
 #define RSE 2
@@ -15,6 +17,10 @@
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
+
+ZMK_UNICODE_SINGLE(hash_char, N0, N0, 2, 3) //  U+0023 for #
+ZMK_UNICODE_SINGLE(lbracket, N0, N0, 5, B) // U+005B for [
+ZMK_UNICODE_SINGLE(rbracket, N0, N0, 5, D) // U+005D for ]
 
 / {
     chosen {
@@ -61,9 +67,9 @@
                 raise_layer {
                         display-name = "NUM";
                         bindings = <
-          &mt LGUI KP_NUM   &kp KP_SLASH      &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_MINUS   &kp LBKT       &kp HOME   &kp PSCRN   &kp PG_UP   &kp SLCK          &kp CLCK
-          &mt LCTRL EQUAL   &kp KP_MULTIPLY   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_PLUS    &kp HASH       &kp LEFT   &kp UP      &kp RIGHT   &kp INS           &mt RCTRL  K_APP
-          &kp LALT          &kp KP_N0         &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_DOT     &kp RBKT       &kp END    &kp DOWN    &kp PG_DN   &kp PAUSE_BREAK   &kp RALT
+          &mt LGUI KP_NUM   &kp KP_SLASH      &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_MINUS   &hash_char     &kp HOME   &kp PSCRN   &kp PG_UP   &kp SLCK          &kp CLCK
+          &mt LCTRL EQUAL   &kp KP_MULTIPLY   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_PLUS    &lbracket      &kp LEFT   &kp UP      &kp RIGHT   &kp INS           &mt RCTRL  K_APP
+          &kp LALT          &kp KP_N0         &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_DOT     &rbracket      &kp END    &kp DOWN    &kp PG_DN   &kp PAUSE_BREAK   &kp RALT
                                                           &trans      &trans      &lt ADJ RET    &lt ADJ ESC    &trans     &trans
                         >;
                 };
