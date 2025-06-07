@@ -18,17 +18,17 @@
 &mt { quick_tap_ms = <200>; };
 
 / {
-  behaviors {
-    shash: macro {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <
-        &kp LGUI SPACE  // OS shortcut to switch layout
-        &kp HASH        // Type '#' (on EN layout)
-        &kp LGUI SPACE  // Switch back
-      >;
+    macros {
+        shash: shash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp Z &kp M &kp K>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
     };
-  };
 };
 
 / {
