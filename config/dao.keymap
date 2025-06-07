@@ -22,8 +22,9 @@
         gopat: gopat {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <1>;
             bindings
-                = <&macro_tap &kp I &kp F &kp SPACE &kp E &kp R &kp R &kp SPACE &kp QMARK &kp EQUAL &kp SPACE &kp N &kp I &kp L &kp SPACE &kp LS(LBKT) &kp RET>
+                = <&macro_tap &kp I &kp F &kp SPACE &kp E &kp R &kp R &kp SPACE &kp EXCL &kp EQUAL &kp SPACE &kp N &kp I &kp L &kp SPACE &kp LS(LBKT) &kp RET>
                 ;
         };
     };
